@@ -6,6 +6,7 @@ extends Node2D
 @onready var init_pos : Vector2
 @onready var offset : float = -0.01
 @onready var animator : AnimatedSprite2D = $Sprite2D
+@onready var floating : bool = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,13 +17,13 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	position.y += offset
-	
-	if(position.y <= (init_pos.y - 1)):
-		offset = 0.01
-	if(position.y >= (init_pos.y + 1)):
-		offset = -0.01
-	print(position.y)
+	if(floating == true):
+		position.y += offset
+		if(position.y <= (init_pos.y - 1)):
+			offset = 0.01
+		if(position.y >= (init_pos.y + 1)):
+			offset = -0.01
+
 	pass
 
 # Type: 0 = Devil, 1 = Bird, 2 = Horror, 3 = Crab
