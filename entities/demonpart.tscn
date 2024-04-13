@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwvx5xwrc5ihd"]
+
+[ext_resource type="Script" path="res://entities/demonpart.gd" id="1_qy4yn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jqjps"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lgmol"]
+size = Vector2(24, 24)
+
+[node name="Demonpart" type="Node2D"]
+script = ExtResource("1_qy4yn")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -6)
+sprite_frames = SubResource("SpriteFrames_jqjps")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_lgmol")
