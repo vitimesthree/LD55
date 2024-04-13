@@ -218,9 +218,7 @@ script = ExtResource("1_qy4yn")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -6)
 sprite_frames = SubResource("SpriteFrames_jqjps")
-animation = &"legs_r"
-frame = 3
-frame_progress = 1.0
+animation = &"heads"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 4
@@ -229,5 +227,3 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_lgmol")
-
-[node name="Camera2D" type="Camera2D" parent="."]

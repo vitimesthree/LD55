@@ -3,14 +3,26 @@ extends Node2D
 @export var part_type : String = "body"
 @export var demon_type : String = "devil"
 
+@onready var init_pos : Vector2
+@onready var offset : float = -0.01
 @onready var animator : AnimatedSprite2D = $Sprite2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	createPart(2, 3)
+	# debug
+	createPart()
+	init_pos = position
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	position.y += offset
+	
+	if(position.y <= (init_pos.y - 1)):
+		offset = 0.01
+	if(position.y >= (init_pos.y + 1)):
+		offset = -0.01
+	print(position.y)
 	pass
 
 # Type: 0 = Devil, 1 = Bird, 2 = Horror, 3 = Crab
@@ -48,6 +60,4 @@ func createPart(type = 0, part = 0):
 		3:
 			demon_type = "crab"
 			animator.frame = 3
-	print(demon_type, ", ", part_type)
 	animator.pause()
-	print("Frame: ", animator.frame)
