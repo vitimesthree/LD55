@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cquegfrh7vta0"]
+
+[ext_resource type="PackedScene" uid="uid://sw3xs3fsxlo8" path="res://ui/hud.tscn" id="1_6jei3"]
+[ext_resource type="PackedScene" uid="uid://c0mc1wn1v04wc" path="res://world/world.tscn" id="2_f5gsf"]
+[ext_resource type="PackedScene" uid="uid://cfog5t5oqssai" path="res://entities/player.tscn" id="3_s4mts"]
+
+[node name="Main" type="Node2D"]
+
+[node name="World" parent="." instance=ExtResource("2_f5gsf")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource("1_6jei3")]
+metadata/_edit_lock_ = true
+
+[node name="Player" parent="." instance=ExtResource("3_s4mts")]
+position = Vector2(96, 240)
+collision_layer = 2
+collision_mask = 1
+slide_on_ceiling = false
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+limit_left = 0
+limit_top = 0
+limit_right = 1440
+limit_bottom = 784
