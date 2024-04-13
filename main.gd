@@ -27,7 +27,7 @@ func spawn_parts():
 		newpart.createPart(Global.prompt, r)
 	
 	# generates random amount of extra parts
-	var parts_amount = randi_range(8, 18)
+	var parts_amount = randi_range(6, 14)
 	for a in range(0,parts_amount):
 		var extrapart = demon_part.instantiate()
 		parts_holder.add_child(extrapart)
