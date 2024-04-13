@@ -1,13 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://b14cpjy0h1en6"]
+[gd_scene load_steps=3 format=3 uid="uid://b14cpjy0h1en6"]
+
+[ext_resource type="Script" path="res://entities/broom.gd" id="1_6oo7g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jmp5o"]
 size = Vector2(16, 16)
 
 [node name="Broom" type="Node2D"]
+script = ExtResource("1_6oo7g")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_jmp5o")
