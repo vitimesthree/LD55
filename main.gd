@@ -21,5 +21,23 @@ func spawn_parts():
 		var newpart = demon_part.instantiate()
 		parts_holder.add_child(newpart)
 		parts_spawned.append(newpart)
-		newpart.position = $Player.position + Vector2(10,10)
+		
+		# set to markers later
+		newpart.position = $Player.position + Vector2(64,-10)
 		newpart.createPart(Global.prompt, r)
+	
+	# generates random amount of extra parts
+	var parts_amount = randi_range(8, 18)
+	for a in range(0,parts_amount):
+		var extrapart = demon_part.instantiate()
+		parts_holder.add_child(extrapart)
+		parts_spawned.append(extrapart)
+		
+		# set to markers later
+		extrapart.position = $Player.position + Vector2(64,-10)
+		
+		var rand_demon = Global.prompt
+		while rand_demon == Global.prompt:
+			rand_demon = randi_range(0,3)
+		var rand_part = randi_range(0,5)
+		extrapart.createPart(rand_demon, a)
