@@ -1,12 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://cquegfrh7vta0"]
+[gd_scene load_steps=6 format=3 uid="uid://cquegfrh7vta0"]
 
 [ext_resource type="PackedScene" uid="uid://sw3xs3fsxlo8" path="res://ui/hud.tscn" id="1_6jei3"]
 [ext_resource type="Script" path="res://main.gd" id="1_h6csy"]
 [ext_resource type="PackedScene" uid="uid://c0mc1wn1v04wc" path="res://world/world.tscn" id="2_f5gsf"]
 [ext_resource type="PackedScene" uid="uid://cfog5t5oqssai" path="res://entities/player.tscn" id="3_s4mts"]
+[ext_resource type="AudioStream" uid="uid://yhclmsh0omhd" path="res://sound/ld55.mp3" id="5_j4buf"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_h6csy")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_j4buf")
 
 [node name="World" parent="." instance=ExtResource("2_f5gsf")]
 
@@ -72,7 +76,7 @@ position = Vector2(935, 492)
 position = Vector2(1006, 370)
 
 [node name="Marker2D14" type="Marker2D" parent="Spawns"]
-position = Vector2(1383, 705)
+position = Vector2(1383, 686)
 
 [node name="Marker2D15" type="Marker2D" parent="Spawns"]
 position = Vector2(502, 695)
@@ -91,3 +95,20 @@ position = Vector2(448, 639)
 
 [node name="Marker2D20" type="Marker2D" parent="Spawns"]
 position = Vector2(448, 639)
+
+[node name="BroomSpawns" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="BroomSpawns"]
+position = Vector2(366, 593)
+
+[node name="Marker2D2" type="Marker2D" parent="BroomSpawns"]
+position = Vector2(1001, 664)
+
+[node name="Marker2D3" type="Marker2D" parent="BroomSpawns"]
+position = Vector2(1316, 657)
+
+[node name="Marker2D4" type="Marker2D" parent="BroomSpawns"]
+position = Vector2(128, 584)
+
+[node name="Marker2D5" type="Marker2D" parent="BroomSpawns"]
+position = Vector2(488, 595)

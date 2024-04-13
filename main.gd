@@ -3,6 +3,7 @@ extends Node2D
 var parts_spawned : Array = []
 var parts_collected : Array = []
 var demon_part = preload("res://entities/demonpart.tscn")
+var broom = preload("res://entities/broom.tscn")
 
 var spawns : Array = []
 var spawn_taken : Array = []
@@ -17,7 +18,8 @@ func _ready():
 		spawn_taken.append(false)
 	
 	spawn_parts()
-	print("Taken Array: ", spawn_taken)
+	spawn_broom()
+	$AudioStreamPlayer.play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -59,3 +61,11 @@ func spawn_parts():
 			rand_demon = randi_range(0,3)
 		var rand_part = randi_range(0,5)
 		extrapart.createPart(rand_demon, a)
+
+func spawn_broom():
+	var broom_spawns = $BroomSpawns.get_children()
+	var rand_spawn = randi_range(0,4)
+	
+	var broom_pickup = broom.instantiate()
+	parts_holder.add_child(broom_pickup)
+	broom_pickup.position = broom_spawns[rand_spawn].position
