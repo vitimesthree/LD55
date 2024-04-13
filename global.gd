@@ -1,8 +1,7 @@
 extends Node
 
 var prompt : int = 0
-var parts_spawned : Array = []
-var parts_collected : Array = []
+
 
 
 # Called when the node enters the scene tree for the first time.

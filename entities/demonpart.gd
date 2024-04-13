@@ -11,8 +11,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# debug
-	createPart()
-	init_pos = position
+	#createPart()
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -62,3 +61,4 @@ func createPart(type = 0, part = 0):
 			demon_type = "crab"
 			animator.frame = 3
 	animator.pause()
+	init_pos = position
