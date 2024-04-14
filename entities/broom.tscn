@@ -1,13 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://b14cpjy0h1en6"]
+[gd_scene load_steps=5 format=3 uid="uid://b14cpjy0h1en6"]
 
 [ext_resource type="Script" path="res://entities/broom.gd" id="1_6oo7g"]
 [ext_resource type="Texture2D" uid="uid://6r0402hxhcps" path="res://sprites/broom.png" id="2_0bt7x"]
+[ext_resource type="AudioStream" uid="uid://0vcsdc7b2dr2" path="res://sound/collect/body_get_all_parts.wav" id="3_gccm0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jmp5o"]
 size = Vector2(24, 24)
 
 [node name="Broom" type="Node2D"]
 script = ExtResource("1_6oo7g")
+
+[node name="CollectSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_gccm0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -9)

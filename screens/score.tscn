@@ -88,6 +88,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Good" type="Label" parent="."]
+visible = false
 offset_left = 192.0
 offset_top = 127.0
 offset_right = 480.0
