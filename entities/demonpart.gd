@@ -2,11 +2,14 @@ extends Node2D
 
 @export var part_type : String = "body"
 @export var demon_type : String = "devil"
+@export var get_msg : String = "BODY\nGET!"
 
 @onready var init_pos : Vector2
 @onready var offset : float = -0.01
 @onready var animator : AnimatedSprite2D = $Sprite2D
 @onready var floating : bool = true
+
+var notif_text = preload("res://ui/notif.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -31,21 +34,27 @@ func createPart(type = 0, part = 0):
 	match part:
 		0:
 			part_type = "body"
+			get_msg = "BODY\nGET!"
 			animator.play("bodies")
 		1:
 			part_type = "head"
+			get_msg = "HEAD\nGET!"
 			animator.play("heads")
 		2:
 			part_type = "arm_l"
+			get_msg = "LEFT ARM\nGET!"
 			animator.play("arms_l")
 		3:
 			part_type = "arm_r"
+			get_msg = "RIGHT ARM\nGET!"
 			animator.play("arms_r")
 		4:
 			part_type = "leg_l"
+			get_msg = "LEFT LEG\nGET!"
 			animator.play("legs_l")
 		5:
 			part_type = "leg_r"
+			get_msg = "RIGHT LEG\nGET!"
 			animator.play("legs_r")
 	match type:
 		0:
@@ -64,4 +73,11 @@ func createPart(type = 0, part = 0):
 	init_pos = position
 
 func _on_area_2d_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
-	pass # Replace with function body.
+	var notif = notif_text.instantiate()
+	var hud = get_tree().root.get_child(1).get_child(2).get_child(0)
+	hud.add_child(notif)
+	
+	notif.position = init_pos
+	notif.appear(get_msg)
+	
+	self.queue_free()
