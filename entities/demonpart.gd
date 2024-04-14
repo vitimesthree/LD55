@@ -62,3 +62,6 @@ func createPart(type = 0, part = 0):
 			animator.frame = 3
 	animator.pause()
 	init_pos = position
+
+func _on_area_2d_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	pass # Replace with function body.

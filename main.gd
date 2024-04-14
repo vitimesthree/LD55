@@ -1,7 +1,7 @@
 extends Node2D
 
-var parts_spawned : Array = []
-var parts_collected : Array = []
+@onready var parts_spawned : Array = []
+@onready var parts_collected : Array = []
 var demon_part = preload("res://entities/demonpart.tscn")
 var broom = preload("res://entities/broom.tscn")
 

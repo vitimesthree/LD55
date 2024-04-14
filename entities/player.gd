@@ -11,13 +11,15 @@ extends CharacterBody2D
 
 @export var broom_unlocked: bool = false
 @export var broom_enabled: bool = false
-@export var broom_speed: float = 60
+@export var broom_speed: float = 120
 @export var broom_acceleration: float = 2
 @export var broom_decceleration: float = 5
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+func _ready():
+	broom_unlocked = false
 
 func _physics_process(delta):
 	# Regular gameplay.

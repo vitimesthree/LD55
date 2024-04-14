@@ -7,7 +7,6 @@ var offset : float = -0.01
 func _ready():
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	position.y += offset
@@ -18,3 +17,8 @@ func _process(delta):
 
 func set_pos():
 	init_pos = position
+
+func _on_area_2d_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	var player = get_tree().root.get_child(1).get_child(3)
+	player.broom_unlocked = true
+	self.queue_free()
