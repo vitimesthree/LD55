@@ -84,6 +84,9 @@ func _on_area_2d_body_shape_entered(body_rid, body, body_shape_index, local_shap
 	update_tracker(part_type)
 	add_to_parts(part_type, demon_type)
 	
+	if Global.parts_collected.size() == 6:
+		get_msg = "GET BACK TO\nTHE DOOR!"
+	
 	if dupe_part == true:
 		get_msg = "ALREADY GOT\nTHIS PART!!"
 	else:

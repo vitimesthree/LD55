@@ -13,6 +13,7 @@ func _process(delta):
 
 func assemble_demon():
 	var parts = Global.parts_collected
+	print(parts)
 	for r in range (0,6):
 		var current_part = parts[r]
 		var part_type = current_part[0]
