@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://bj1ay5tq680j0"]
+
+[ext_resource type="Script" path="res://screens/tutorial.gd" id="1_1yqyt"]
+[ext_resource type="Theme" uid="uid://do1ppa3788dbi" path="res://ui/hud_theme.tres" id="1_bqhq5"]
+
+[node name="Tutorial" type="Node2D"]
+script = ExtResource("1_1yqyt")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 480.0
+offset_bottom = 271.0
+color = Color(0.109804, 0.0784314, 0.121569, 1)
+
+[node name="Demon" type="Label" parent="."]
+offset_right = 480.0
+offset_bottom = 112.0
+theme = ExtResource("1_bqhq5")
+text = "monster"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tutorial" type="Label" parent="."]
+offset_top = 64.0
+offset_right = 480.0
+offset_bottom = 272.0
+theme = ExtResource("1_bqhq5")
+theme_override_font_sizes/font_size = 9
+text = "I have to use this clue to find the right parts... but I can only
+grab one of each type! I better get it right then, and fast!
+
+Arrow keys / D-pad / Analog Stick   =   Movement
+Z / (B) / (A)   =   Jump / Enter exit
+
+Find a broom to fly to the upper area!
+X / (X) / (Y)   =   Toggle broom
+
+Press Z to start!"
+horizontal_alignment = 1
+vertical_alignment = 1

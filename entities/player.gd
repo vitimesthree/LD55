@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @onready var sprite: Node2D = $Sprite
 @onready var collision: Node2D = $Collision
+@onready var pickup_timer: Node = $PickupTimer
 
 @export var speed: float = 120
 @export var acceleration: float = 8
@@ -11,9 +12,9 @@ extends CharacterBody2D
 
 @export var broom_unlocked: bool = false
 @export var broom_enabled: bool = false
-@export var broom_speed: float = 120
-@export var broom_acceleration: float = 2
-@export var broom_decceleration: float = 5
+@export var broom_speed: float = speed * 1.2
+@export var broom_acceleration: float = acceleration / 4
+@export var broom_decceleration: float = decceleration / 4
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")

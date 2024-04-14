@@ -34,29 +34,29 @@ func createPart(type = 0, part = 0):
 	match part:
 		0:
 			part_type = "body"
-			get_msg = "BODY\nGET!"
+			get_msg = "GOT A\nTORSO!"
 			animator.play("bodies")
 		1:
 			part_type = "head"
-			get_msg = "HEAD\nGET!"
+			get_msg = "KEEP YOUR\nHEAD TOGETHER!"
 			animator.play("heads")
 		2:
 			part_type = "arm_l"
 			#Left and Right are swapped from the demon's perspective
 			#I'm keeping terminology respective to our though
-			get_msg = "RIGHT ARM\nGET!"
+			get_msg = "THAT'S\nRIGHT!"
 			animator.play("arms_l")
 		3:
 			part_type = "arm_r"
-			get_msg = "LEFT ARM\nGET!"
+			get_msg = "FOR THE\nLEFTIES!"
 			animator.play("arms_r")
 		4:
 			part_type = "leg_l"
-			get_msg = "RIGHT LEG\nGET!"
+			get_msg = "IS IT\nLEG DAY?"
 			animator.play("legs_l")
 		5:
 			part_type = "leg_r"
-			get_msg = "LEFT LEG\nGET!"
+			get_msg = "BEST LEFT\nFOR ME!"
 			animator.play("legs_r")
 	match type:
 		0:
