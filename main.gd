@@ -22,7 +22,7 @@ func _ready():
 	$AudioStreamPlayer.play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 func spawn_parts():

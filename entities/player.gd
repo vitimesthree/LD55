@@ -6,7 +6,7 @@ extends CharacterBody2D
 @export var speed: float = 120
 @export var acceleration: float = 8
 @export var decceleration: float = 20
-@export var jump_velocity: float = 30
+@export var jump_velocity: float = 35
 @export var terminal_velocity: float = 30
 
 @export var broom_unlocked: bool = false
@@ -19,7 +19,7 @@ extends CharacterBody2D
 var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
-	broom_unlocked = false
+	pass
 
 func _physics_process(delta):
 	# Regular gameplay.
@@ -83,7 +83,6 @@ func _physics_process(delta):
 			sprite.flip_h = false
 		elif (velocity.x < 0):
 			sprite.flip_h = true
-
 
 func _input(event):
 	if event.is_action_pressed("broom"):
