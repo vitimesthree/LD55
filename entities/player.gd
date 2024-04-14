@@ -3,8 +3,9 @@ extends CharacterBody2D
 @onready var sprite: Node2D = $Sprite
 @onready var collision: Node2D = $Collision
 @onready var pickup_timer: Node = $PickupTimer
+@onready var hurt_sound: Node = $HurtSound
 
-@export var speed: float = 120
+@export var speed: float = 150
 @export var acceleration: float = 8
 @export var decceleration: float = 20
 @export var jump_velocity: float = 35
@@ -12,9 +13,9 @@ extends CharacterBody2D
 
 @export var broom_unlocked: bool = false
 @export var broom_enabled: bool = false
-@export var broom_speed: float = speed * 1.2
-@export var broom_acceleration: float = acceleration / 4
-@export var broom_decceleration: float = decceleration / 4
+@export var broom_speed: float = speed * 1.4
+@export var broom_acceleration: float = acceleration / 2
+@export var broom_decceleration: float = decceleration / 2
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -99,3 +100,8 @@ func _input(event):
 
 func _on_pickup_timer_timeout():
 	pickup_timer.stop()
+
+
+func _on_ghost_body_entered(body):
+	Global.ghost = false
+	hurt_sound.play()

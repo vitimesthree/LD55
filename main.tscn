@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cquegfrh7vta0"]
+[gd_scene load_steps=8 format=3 uid="uid://cquegfrh7vta0"]
 
 [ext_resource type="PackedScene" uid="uid://sw3xs3fsxlo8" path="res://ui/hud.tscn" id="1_6jei3"]
 [ext_resource type="Script" path="res://main.gd" id="1_h6csy"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cfog5t5oqssai" path="res://entities/player.tscn" id="3_s4mts"]
 [ext_resource type="PackedScene" uid="uid://d0slidw1yh0p5" path="res://entities/door.tscn" id="5_i6hes"]
 [ext_resource type="AudioStream" uid="uid://yhclmsh0omhd" path="res://sound/ld55.mp3" id="5_j4buf"]
+[ext_resource type="PackedScene" uid="uid://be8f12kro6wqd" path="res://entities/ghost.tscn" id="7_qf3fc"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_h6csy")
@@ -116,3 +117,12 @@ position = Vector2(128, 584)
 
 [node name="Marker2D5" type="Marker2D" parent="BroomSpawns"]
 position = Vector2(496, 576)
+
+[node name="Ghost" parent="." node_paths=PackedStringArray("player") instance=ExtResource("7_qf3fc")]
+position = Vector2(720, -32)
+collision_layer = 0
+collision_mask = 2
+player = NodePath("../Player")
+speed = 100.0
+
+[connection signal="body_entered" from="Ghost" to="Player" method="_on_ghost_body_entered"]
