@@ -7,4 +7,4 @@
 [node name="Cutscene" parent="." instance=ExtResource("1_lx6r4")]
 starting_frame = 5
 ending_frame = 6
-next_scene = "res://screens/score.tscn"
+next_scene = "res://screens/tutorial.tscn"

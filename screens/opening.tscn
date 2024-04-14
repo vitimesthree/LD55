@@ -5,5 +5,5 @@
 [node name="Opening" type="Node2D"]
 
 [node name="Cutscene" parent="." instance=ExtResource("1_kspiq")]
-ending_frame = 3
+ending_frame = 4
 next_scene = "res://screens/tutorial.tscn"

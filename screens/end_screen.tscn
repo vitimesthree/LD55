@@ -5,7 +5,7 @@
 [node name="End Screen" type="Node2D"]
 
 [node name="Cutscene" parent="." instance=ExtResource("1_21x75")]
-starting_frame = 8
+starting_frame = 9
 ending_frame = 9
-next_scene = "res://screens/tutorial.tscn"
+next_scene = "res://screens/opening.tscn"
 the_end = true

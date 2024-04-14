@@ -28,7 +28,7 @@ func calculate_score():
 			smarts += 1000
 		else:
 			smarts += 500
-	
+
 	if(smarts == 6000):
 		smarts = 999999
 		$Perfect.visible = true
