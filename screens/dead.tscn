@@ -1,10 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://bqnglej77vvt3"]
+[gd_scene load_steps=4 format=3 uid="uid://bqnglej77vvt3"]
 
 [ext_resource type="Script" path="res://screens/dead.gd" id="1_70ycq"]
+[ext_resource type="AudioStream" uid="uid://c0uknysfyt7rf" path="res://sound/woof.wav" id="2_fq46p"]
 [ext_resource type="Theme" uid="uid://do1ppa3788dbi" path="res://ui/hud_theme.tres" id="2_w74ab"]
 
 [node name="Dead" type="Node2D"]
 script = ExtResource("1_70ycq")
+
+[node name="Audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_fq46p")
+volume_db = 2.0
+pitch_scale = 0.7
+autoplay = true
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0

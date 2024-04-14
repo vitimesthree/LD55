@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://cfog5t5oqssai"]
+[gd_scene load_steps=18 format=3 uid="uid://cfog5t5oqssai"]
 
 [ext_resource type="Texture2D" uid="uid://cs7cw3v775if8" path="res://sprites/player.png" id="1_c38rd"]
 [ext_resource type="Script" path="res://entities/player.gd" id="1_pmrbi"]
+[ext_resource type="AudioStream" uid="uid://d245eahdf4jqg" path="res://sound/hitHurt.wav" id="2_8y0uk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_waexc"]
 atlas = ExtResource("1_c38rd")
@@ -122,6 +123,11 @@ size = Vector2(12, 12)
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_pmrbi")
+
+[node name="HurtSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_8y0uk")
+volume_db = -3.0
+pitch_scale = 0.7
 
 [node name="PickupTimer" type="Timer" parent="."]
 wait_time = 0.5

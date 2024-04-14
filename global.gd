@@ -2,6 +2,7 @@ extends Node
 
 var prompt : int = 0
 var required_demon: String = ''
+var ghost : bool = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

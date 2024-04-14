@@ -24,10 +24,10 @@ autostart = true
 script = ExtResource("2_wn2mj")
 
 [node name="Label" type="Label" parent="Timer"]
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 56.0
-offset_bottom = 31.0
+offset_left = 32.0
+offset_top = 16.0
+offset_right = 80.0
+offset_bottom = 39.0
 theme = ExtResource("1_b6y16")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
@@ -35,17 +35,17 @@ text = "0:00"
 
 [node name="PartLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 402.0
-offset_top = 6.0
-offset_right = 462.0
-offset_bottom = 29.0
+offset_left = 392.0
+offset_top = 16.0
+offset_right = 452.0
+offset_bottom = 39.0
 theme = ExtResource("1_b6y16")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 text = "Parts"
 
 [node name="PartTracker" type="Node2D" parent="."]
-position = Vector2(-5, -1)
+position = Vector2(-16, 16)
 
 [node name="Head" type="Sprite2D" parent="PartTracker"]
 position = Vector2(436, 41)
