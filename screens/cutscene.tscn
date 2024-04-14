@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://8jj0ck8l15va"]
+[gd_scene load_steps=14 format=3 uid="uid://8jj0ck8l15va"]
 
 [ext_resource type="Script" path="res://screens/cutscene.gd" id="1_hrqbu"]
 [ext_resource type="Texture2D" uid="uid://b6uowg45q5lky" path="res://sprites/story.png" id="2_l3xh3"]
+[ext_resource type="AudioStream" uid="uid://yhclmsh0omhd" path="res://sound/ld55.mp3" id="2_l8xaj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3grpm"]
 atlas = ExtResource("2_l3xh3")
@@ -64,6 +65,9 @@ animations = [{
 "texture": SubResource("AtlasTexture_4yc64")
 }, {
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_n5jaw")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_ueafv")
 }, {
 "duration": 1.0,
@@ -76,6 +80,12 @@ animations = [{
 
 [node name="Cutscene" type="Node2D"]
 script = ExtResource("1_hrqbu")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_l8xaj")
+volume_db = -3.0
+pitch_scale = 0.5
+autoplay = true
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
@@ -90,5 +100,6 @@ metadata/_edit_lock_ = true
 [node name="Frame" type="AnimatedSprite2D" parent="."]
 position = Vector2(240, 136)
 sprite_frames = SubResource("SpriteFrames_fjrce")
+frame_progress = 0.883503
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

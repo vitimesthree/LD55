@@ -1,7 +1,6 @@
 extends Node2D
 
 @onready var label: Node = $Demon
-const main_scene: String = 'res://main.tscn'
 
 const devil: Array = ['the beast', 'the thing', 'evil']
 const bird: Array = ['the bird', 'the flyer', 'lays']
@@ -18,7 +17,6 @@ func _ready():
 		horror: Global.required_demon = "horror"
 		crab: Global.required_demon = "crab"
 	label.text = str(demon.pick_random())
-	preload(main_scene)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -26,4 +24,4 @@ func _process(_delta):
 
 func _input(event):
 	if event.is_action_pressed("jump"):
-		get_tree().change_scene_to_file(main_scene)
+		get_tree().change_scene_to_file('res://main.tscn')

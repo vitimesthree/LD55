@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var frame: Node2D = $Frame
 @onready var timer: Node = $Timer
+@onready var music: Node = $Music
 var fade_speed: float = 5
 
 @export var starting_frame: int = 0
@@ -29,11 +30,17 @@ func _process(delta):
 	if frame.modulate.a == 0:
 		fade = false
 		frame.frame = frame.frame + 1
-		
-	if frame.frame == ending_frame or Input.is_action_just_pressed("jump"):
-		if not the_end:
-			get_tree().change_scene_to_file(next_scene)
-		else:
+	
+	if the_end:
+		if frame.frame == ending_frame:
 			timer.stop()
+		if Input.is_action_just_pressed("jump"):
+			get_tree().change_scene_to_file(next_scene)
+	else:
+		if frame.frame == ending_frame:
+			music.volume_db = music.volume_db - 0.1
+			
+		if frame.frame > ending_frame or Input.is_action_just_pressed("jump"):
+			get_tree().change_scene_to_file(next_scene)
 func _on_timer_timeout():
 	fade = true

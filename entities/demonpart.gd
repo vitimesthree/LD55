@@ -2,7 +2,7 @@ extends Node2D
 
 @export var part_type : String = "body"
 @export var demon_type : String = "devil"
-@export var get_msg : String = "BODY\nGET!"
+@export var get_msg : String = "GOT A\nTORSO!"
 
 @onready var init_pos : Vector2
 @onready var offset : float = -0.01
@@ -52,7 +52,7 @@ func createPart(type = 0, part = 0):
 			animator.play("arms_r")
 		4:
 			part_type = "leg_l"
-			get_msg = "IS IT\nLEG DAY?"
+			get_msg = "DON'T\nRUN!"
 			animator.play("legs_l")
 		5:
 			part_type = "leg_r"
@@ -77,7 +77,9 @@ func createPart(type = 0, part = 0):
 func _on_area_2d_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
 	var notif = notif_text.instantiate()
 	var world = get_tree().root.get_child(1).get_child(1).get_child(0)
+	var player = get_tree().root.get_child(1).get_node("Player")
 	world.add_child(notif)
+	player.get_node("PickupTimer").start()
 	
 	update_tracker(part_type)
 	

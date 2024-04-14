@@ -2,7 +2,7 @@ extends Node2D
 
 var init_pos : Vector2
 var offset : float = -0.01
-var get_msg : String = "BROOM GET!\nPRESS X!"
+var get_msg : String = "MY BROOM!\n(Press X / (A) / (B))"
 var notif_text = preload("res://ui/notif.tscn")
 
 # Called when the node enters the scene tree for the first time.

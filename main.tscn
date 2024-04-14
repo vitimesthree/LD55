@@ -10,8 +10,9 @@
 [node name="Main" type="Node2D"]
 script = ExtResource("1_h6csy")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_j4buf")
+autoplay = true
 
 [node name="World" parent="." instance=ExtResource("2_f5gsf")]
 metadata/_edit_lock_ = true
@@ -46,10 +47,10 @@ position = Vector2(440, 221)
 position = Vector2(64, 216)
 
 [node name="Marker2D3" type="Marker2D" parent="Spawns"]
-position = Vector2(1360, 32)
+position = Vector2(1336, 64)
 
 [node name="Marker2D4" type="Marker2D" parent="Spawns"]
-position = Vector2(1040, 16)
+position = Vector2(1064, 48)
 
 [node name="Marker2D5" type="Marker2D" parent="Spawns"]
 position = Vector2(944, 560)
@@ -70,7 +71,7 @@ position = Vector2(920, 96)
 position = Vector2(800, 224)
 
 [node name="Marker2D11" type="Marker2D" parent="Spawns"]
-position = Vector2(512, 29)
+position = Vector2(512, 64)
 
 [node name="Marker2D12" type="Marker2D" parent="Spawns"]
 position = Vector2(935, 492)

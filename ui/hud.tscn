@@ -1,7 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://sw3xs3fsxlo8"]
+[gd_scene load_steps=9 format=3 uid="uid://sw3xs3fsxlo8"]
 
 [ext_resource type="Theme" uid="uid://do1ppa3788dbi" path="res://ui/hud_theme.tres" id="1_b6y16"]
-[ext_resource type="Script" path="res://ui/hud.gd" id="1_fg3g3"]
 [ext_resource type="Script" path="res://ui/timer.gd" id="2_wn2mj"]
 [ext_resource type="Texture2D" uid="uid://dw0u1oc6081qt" path="res://sprites/hud_head.png" id="4_vojwa"]
 [ext_resource type="Texture2D" uid="uid://d6s1pom1na7" path="res://sprites/hud_torso.png" id="5_qfnrj"]
@@ -17,7 +16,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_fg3g3")
 
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0
@@ -31,6 +29,8 @@ offset_top = 8.0
 offset_right = 56.0
 offset_bottom = 31.0
 theme = ExtResource("1_b6y16")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
 text = "0:00"
 
 [node name="PartLabel" type="Label" parent="."]
@@ -40,6 +40,8 @@ offset_top = 6.0
 offset_right = 462.0
 offset_bottom = 29.0
 theme = ExtResource("1_b6y16")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
 text = "Parts"
 
 [node name="PartTracker" type="Node2D" parent="."]
@@ -75,4 +77,4 @@ position = Vector2(455, 89)
 scale = Vector2(2, 2)
 texture = ExtResource("9_h7e5e")
 
-[connection signal="timeout" from="Timer" to="." method="_on_second_timeout"]
+[connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]
