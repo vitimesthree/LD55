@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://sw3xs3fsxlo8"]
+[gd_scene load_steps=10 format=3 uid="uid://sw3xs3fsxlo8"]
 
 [ext_resource type="Theme" uid="uid://do1ppa3788dbi" path="res://ui/hud_theme.tres" id="1_b6y16"]
 [ext_resource type="Script" path="res://ui/hud.gd" id="1_fg3g3"]
 [ext_resource type="Script" path="res://ui/timer.gd" id="2_wn2mj"]
+[ext_resource type="Texture2D" uid="uid://dw0u1oc6081qt" path="res://sprites/hud_head.png" id="4_vojwa"]
+[ext_resource type="Texture2D" uid="uid://d6s1pom1na7" path="res://sprites/hud_torso.png" id="5_qfnrj"]
+[ext_resource type="Texture2D" uid="uid://c8t8mu80r12i6" path="res://sprites/hud_arml.png" id="6_grs7l"]
+[ext_resource type="Texture2D" uid="uid://csh2d53c8snxo" path="res://sprites/hud_armr.png" id="7_p5cl6"]
+[ext_resource type="Texture2D" uid="uid://cn8hxnh8esp8x" path="res://sprites/hud_legl.png" id="8_d838p"]
+[ext_resource type="Texture2D" uid="uid://crpycvfciop3l" path="res://sprites/hud_legr.png" id="9_h7e5e"]
 
 [node name="HUD" type="Control"]
 layout_mode = 3
@@ -29,11 +35,44 @@ text = "0:00"
 
 [node name="PartLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 416.0
-offset_top = 8.0
-offset_right = 464.0
-offset_bottom = 31.0
+offset_left = 402.0
+offset_top = 6.0
+offset_right = 462.0
+offset_bottom = 29.0
 theme = ExtResource("1_b6y16")
-text = "Part"
+text = "Parts"
+
+[node name="PartTracker" type="Node2D" parent="."]
+position = Vector2(-5, -1)
+
+[node name="Head" type="Sprite2D" parent="PartTracker"]
+position = Vector2(436, 41)
+scale = Vector2(2, 2)
+texture = ExtResource("4_vojwa")
+
+[node name="Body" type="Sprite2D" parent="PartTracker"]
+position = Vector2(436, 66)
+scale = Vector2(2, 2)
+texture = ExtResource("5_qfnrj")
+
+[node name="ArmL" type="Sprite2D" parent="PartTracker"]
+position = Vector2(405, 67)
+scale = Vector2(2, 2)
+texture = ExtResource("6_grs7l")
+
+[node name="ArmR" type="Sprite2D" parent="PartTracker"]
+position = Vector2(467, 68)
+scale = Vector2(2, 2)
+texture = ExtResource("7_p5cl6")
+
+[node name="LegL" type="Sprite2D" parent="PartTracker"]
+position = Vector2(417, 89)
+scale = Vector2(2, 2)
+texture = ExtResource("8_d838p")
+
+[node name="LegR" type="Sprite2D" parent="PartTracker"]
+position = Vector2(455, 89)
+scale = Vector2(2, 2)
+texture = ExtResource("9_h7e5e")
 
 [connection signal="timeout" from="Timer" to="." method="_on_second_timeout"]

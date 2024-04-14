@@ -218,8 +218,7 @@ script = ExtResource("1_qy4yn")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -6)
 sprite_frames = SubResource("SpriteFrames_jqjps")
-animation = &"arms_l"
-frame = 2
+animation = &"bodies"
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 4

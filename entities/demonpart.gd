@@ -42,19 +42,21 @@ func createPart(type = 0, part = 0):
 			animator.play("heads")
 		2:
 			part_type = "arm_l"
-			get_msg = "LEFT ARM\nGET!"
+			#Left and Right are swapped from the demon's perspective
+			#I'm keeping terminology respective to our though
+			get_msg = "RIGHT ARM\nGET!"
 			animator.play("arms_l")
 		3:
 			part_type = "arm_r"
-			get_msg = "RIGHT ARM\nGET!"
+			get_msg = "LEFT ARM\nGET!"
 			animator.play("arms_r")
 		4:
 			part_type = "leg_l"
-			get_msg = "LEFT LEG\nGET!"
+			get_msg = "RIGHT LEG\nGET!"
 			animator.play("legs_l")
 		5:
 			part_type = "leg_r"
-			get_msg = "RIGHT LEG\nGET!"
+			get_msg = "LEFT LEG\nGET!"
 			animator.play("legs_r")
 	match type:
 		0:
@@ -74,10 +76,36 @@ func createPart(type = 0, part = 0):
 
 func _on_area_2d_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
 	var notif = notif_text.instantiate()
-	var hud = get_tree().root.get_child(1).get_child(1).get_child(0)
-	hud.add_child(notif)
+	var world = get_tree().root.get_child(1).get_child(1).get_child(0)
+	world.add_child(notif)
+	
+	update_tracker(part_type)
 	
 	notif.position = init_pos
 	notif.appear(get_msg)
 	
 	self.queue_free()
+
+func update_tracker(part = "body"):
+	var tracker = get_tree().root.get_child(1).get_child(2).get_child(0).get_child(2)
+	var piece : Sprite2D
+	
+	match part:
+		"head":
+			piece = tracker.get_child(0)
+			piece.texture = load("res://sprites/hud_head_got.png")
+		"body":
+			piece = tracker.get_child(1)
+			piece.texture = load("res://sprites/hud_torso_got.png")
+		"arm_l":
+			piece = tracker.get_child(2)
+			piece.texture = load("res://sprites/hud_arml_got.png")
+		"arm_r":
+			piece = tracker.get_child(3)
+			piece.texture = load("res://sprites/hud_armr_got.png")
+		"leg_l":
+			piece = tracker.get_child(4)
+			piece.texture = load("res://sprites/hud_legl_got.png")
+		"leg_r":
+			piece = tracker.get_child(5)
+			piece.texture = load("res://sprites/hud_legr_got.png")

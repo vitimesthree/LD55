@@ -16,5 +16,4 @@ func appear(message):
 		position.y -= 0.01
 
 func _on_timer_timeout():
-	print("timer ran out")
 	self.queue_free()

@@ -90,7 +90,7 @@ position = Vector2(157, 314)
 position = Vector2(305, 311)
 
 [node name="Marker2D19" type="Marker2D" parent="Spawns"]
-position = Vector2(448, 639)
+position = Vector2(40, 115)
 
 [node name="Marker2D20" type="Marker2D" parent="Spawns"]
 position = Vector2(448, 639)
