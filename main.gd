@@ -20,6 +20,7 @@ func _ready():
 	spawn_broom()
 	
 	Global.parts_collected.clear()
+	Global.ghost = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

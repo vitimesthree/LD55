@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgxx2ci576kj6"]
+
+[ext_resource type="SpriteFrames" uid="uid://bpt3hd2v1c8s2" path="res://sprites/parts_anim.tres" id="1_cncpr"]
+[ext_resource type="Script" path="res://ui/demon_puzzle.gd" id="1_suuco"]
+
+[node name="DemonPuzzle" type="Node2D"]
+script = ExtResource("1_suuco")
+
+[node name="Head" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -31)
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("1_cncpr")
+animation = &"heads"
+
+[node name="Body" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("1_cncpr")
+animation = &"bodies"
+
+[node name="ArmL" type="AnimatedSprite2D" parent="."]
+position = Vector2(-29, 14)
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("1_cncpr")
+animation = &"arms_l"
+
+[node name="ArmR" type="AnimatedSprite2D" parent="."]
+position = Vector2(29, 14)
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("1_cncpr")
+animation = &"arms_r"
+
+[node name="LegL" type="AnimatedSprite2D" parent="."]
+position = Vector2(-17, 30)
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("1_cncpr")
+animation = &"legs_l"
+
+[node name="LegR" type="AnimatedSprite2D" parent="."]
+position = Vector2(14, 30)
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("1_cncpr")
+animation = &"legs_r"

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c86ql81hgvebn"]
+[gd_scene load_steps=4 format=3 uid="uid://c86ql81hgvebn"]
 
 [ext_resource type="Script" path="res://screens/score.gd" id="1_3l3o5"]
 [ext_resource type="Theme" uid="uid://do1ppa3788dbi" path="res://ui/hud_theme.tres" id="2_ptmxk"]
+[ext_resource type="PackedScene" uid="uid://dgxx2ci576kj6" path="res://ui/demon_puzzle.tscn" id="3_cnwc7"]
 
 [node name="Score" type="Node2D"]
 script = ExtResource("1_3l3o5")
@@ -12,6 +13,7 @@ offset_bottom = 271.0
 color = Color(0.109804, 0.0784314, 0.121569, 1)
 
 [node name="Monster" type="Label" parent="."]
+visible = false
 offset_right = 192.0
 offset_bottom = 192.0
 theme = ExtResource("2_ptmxk")
@@ -21,7 +23,10 @@ monster
 here pls"
 horizontal_alignment = 1
 vertical_alignment = 1
-metadata/_edit_lock_ = true
+
+[node name="DemonPuzzle" parent="." instance=ExtResource("3_cnwc7")]
+position = Vector2(95, 87)
+scale = Vector2(1.5, 1.5)
 
 [node name="ScoreLabel" type="Label" parent="."]
 offset_top = 128.0
@@ -44,9 +49,9 @@ vertical_alignment = 1
 [node name="Fail" type="Label" parent="."]
 visible = false
 offset_left = 192.0
-offset_top = 128.0
+offset_top = 73.0
 offset_right = 480.0
-offset_bottom = 272.0
+offset_bottom = 217.0
 theme = ExtResource("2_ptmxk")
 theme_override_font_sizes/font_size = 9
 text = "That's not right!
@@ -57,12 +62,29 @@ Better get back in there...
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Succeed" type="Label" parent="."]
+[node name="Good" type="Label" parent="."]
 visible = false
 offset_left = 192.0
-offset_top = 128.0
+offset_top = 66.0
 offset_right = 480.0
-offset_bottom = 272.0
+offset_bottom = 210.0
+theme = ExtResource("2_ptmxk")
+theme_override_font_sizes/font_size = 9
+text = "Good job!
+
+It's not perfect, but this
+guy ought to do just fine.
+
+(Press Z to continue)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Perfect" type="Label" parent="."]
+visible = false
+offset_left = 192.0
+offset_top = 73.0
+offset_right = 480.0
+offset_bottom = 217.0
 theme = ExtResource("2_ptmxk")
 theme_override_font_sizes/font_size = 9
 text = "Perfecto!

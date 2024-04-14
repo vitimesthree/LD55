@@ -133,3 +133,4 @@ func add_to_parts(part, demon):
 	
 	var new_part = [part, demon]
 	Global.parts_collected.append(new_part)
+	#print(Global.parts_collected)
