@@ -2,6 +2,12 @@ extends Node
 
 var prompt : int = 0
 var required_demon: String = ''
+
+# Parts stored as mini-arrays [0,1]
+# 0 is the part type (head, body, etc)
+# 1 is the demon type (devil, bird, etc)
+var parts_collected : Array = []
+
 var ghost : bool = true
 
 # Called when the node enters the scene tree for the first time.

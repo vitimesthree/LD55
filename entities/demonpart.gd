@@ -8,6 +8,7 @@ extends Node2D
 @onready var offset : float = -0.01
 @onready var animator : AnimatedSprite2D = $Sprite2D
 @onready var floating : bool = true
+@onready var dupe_part : bool = false
 
 var notif_text = preload("res://ui/notif.tscn")
 
@@ -79,14 +80,22 @@ func _on_area_2d_body_shape_entered(body_rid, body, body_shape_index, local_shap
 	var world = get_tree().root.get_child(1).get_child(1).get_child(0)
 	var player = get_tree().root.get_child(1).get_node("Player")
 	world.add_child(notif)
-	player.get_node("PickupTimer").start()
 	
 	update_tracker(part_type)
+	add_to_parts(part_type, demon_type)
+	
+	if dupe_part == true:
+		get_msg = "ALREADY GOT\nTHIS PART!!"
+	else:
+		player.get_node("PickupTimer").start()
 	
 	notif.position = init_pos
 	notif.appear(get_msg)
 	
-	self.queue_free()
+	if dupe_part == true:
+		dupe_part == false
+	else:
+		self.queue_free()
 
 func update_tracker(part = "body"):
 	var tracker = get_tree().root.get_child(1).get_child(2).get_child(0).get_child(2)
@@ -111,3 +120,16 @@ func update_tracker(part = "body"):
 		"leg_r":
 			piece = tracker.get_child(5)
 			piece.texture = load("res://sprites/hud_legr_got.png")
+			
+func add_to_parts(part, demon):
+	var size = Global.parts_collected.size()
+	if size != 0:
+		for r in range(0, size):
+			var current_part = Global.parts_collected[r]
+			if part == current_part[0]:
+				dupe_part = true
+				return
+		pass
+	
+	var new_part = [part, demon]
+	Global.parts_collected.append(new_part)

@@ -1,7 +1,6 @@
 extends Node2D
 
 @onready var parts_spawned : Array = []
-@onready var parts_collected : Array = []
 var demon_part = preload("res://entities/demonpart.tscn")
 var broom = preload("res://entities/broom.tscn")
 
@@ -19,6 +18,8 @@ func _ready():
 	
 	spawn_parts()
 	spawn_broom()
+	
+	Global.parts_collected.clear()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

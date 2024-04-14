@@ -1,7 +1,7 @@
 extends Area2D
 
 @export var player: Node2D = null
-@export var speed: float = 50
+var speed: float = 25
 
 @onready var sprite: Node2D = $AnimatedSprite2D
 

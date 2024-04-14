@@ -123,6 +123,5 @@ position = Vector2(720, -32)
 collision_layer = 0
 collision_mask = 2
 player = NodePath("../Player")
-speed = 100.0
 
 [connection signal="body_entered" from="Ghost" to="Player" method="_on_ghost_body_entered"]
