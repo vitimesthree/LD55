@@ -69,3 +69,4 @@ func spawn_broom():
 	var broom_pickup = broom.instantiate()
 	parts_holder.add_child(broom_pickup)
 	broom_pickup.position = broom_spawns[rand_spawn].position
+	broom_pickup.set_pos()
