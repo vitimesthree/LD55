@@ -86,7 +86,7 @@ stream = ExtResource("2_lcmo7")
 autoplay = true
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 4.5
 autostart = true
 
 [node name="ColorRect" type="ColorRect" parent="."]

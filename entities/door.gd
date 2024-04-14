@@ -13,11 +13,9 @@ func _process(delta):
 
 func _on_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
 	player_touch = true
-	print(player_touch)
 
 func _on_body_shape_exited(body_rid, body, body_shape_index, local_shape_index):
 	player_touch = false
-	print(player_touch)
 	
 func _input(event):
 	if Input.is_action_just_pressed("jump"):
