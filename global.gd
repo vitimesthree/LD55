@@ -1,6 +1,7 @@
 extends Node
 
 var prompt : int = 0
+var clue : String = ''
 var required_demon: String = ''
 
 # Parts stored as mini-arrays [0,1]

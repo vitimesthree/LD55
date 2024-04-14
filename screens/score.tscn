@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://c86ql81hgvebn"]
+[gd_scene load_steps=6 format=3 uid="uid://c86ql81hgvebn"]
 
 [ext_resource type="Script" path="res://screens/score.gd" id="1_3l3o5"]
 [ext_resource type="Theme" uid="uid://do1ppa3788dbi" path="res://ui/hud_theme.tres" id="2_ptmxk"]
 [ext_resource type="PackedScene" uid="uid://dgxx2ci576kj6" path="res://ui/demon_puzzle.tscn" id="3_cnwc7"]
+[ext_resource type="FontFile" uid="uid://d3wcvvaiqqqlp" path="res://fonts/pixeloid.ttf" id="4_u3rky"]
+
+[sub_resource type="Theme" id="Theme_2yyhb"]
+default_font = ExtResource("4_u3rky")
+default_font_size = 9
 
 [node name="Score" type="Node2D"]
 script = ExtResource("1_3l3o5")
@@ -46,12 +51,32 @@ text = "000000"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="ClueLabel" type="Label" parent="."]
+offset_left = 281.0
+offset_top = 50.0
+offset_right = 394.0
+offset_bottom = 85.0
+theme = SubResource("Theme_2yyhb")
+text = "The Clue Was:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Clue" type="Label" parent="."]
+offset_left = 241.0
+offset_top = 82.0
+offset_right = 433.0
+offset_bottom = 128.0
+theme = ExtResource("2_ptmxk")
+text = "DEMON"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Fail" type="Label" parent="."]
 visible = false
 offset_left = 192.0
-offset_top = 73.0
+offset_top = 127.0
 offset_right = 480.0
-offset_bottom = 217.0
+offset_bottom = 271.0
 theme = ExtResource("2_ptmxk")
 theme_override_font_sizes/font_size = 9
 text = "That's not right!
@@ -63,11 +88,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Good" type="Label" parent="."]
-visible = false
 offset_left = 192.0
-offset_top = 66.0
+offset_top = 127.0
 offset_right = 480.0
-offset_bottom = 210.0
+offset_bottom = 271.0
 theme = ExtResource("2_ptmxk")
 theme_override_font_sizes/font_size = 9
 text = "Good job!
@@ -82,9 +106,9 @@ vertical_alignment = 1
 [node name="Perfect" type="Label" parent="."]
 visible = false
 offset_left = 192.0
-offset_top = 73.0
+offset_top = 127.0
 offset_right = 480.0
-offset_bottom = 217.0
+offset_bottom = 271.0
 theme = ExtResource("2_ptmxk")
 theme_override_font_sizes/font_size = 9
 text = "Perfecto!

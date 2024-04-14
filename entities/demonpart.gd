@@ -35,7 +35,12 @@ func createPart(type = 0, part = 0):
 	match part:
 		0:
 			part_type = "body"
-			get_msg = "GOT A\nTORSO!"
+			
+			var rando = randi_range(0, 99)
+			if(rando == 69):
+				get_msg = "WOOF WOOF WOOF\nIN YO BODYYY"
+			else:
+				get_msg = "GOT A\nTORSO!"
 			animator.play("bodies")
 		1:
 			part_type = "head"

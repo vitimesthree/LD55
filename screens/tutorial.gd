@@ -25,6 +25,7 @@ func _ready():
 			Global.required_demon = "crab"
 			Global.prompt = 3
 	label.text = str(demon.pick_random())
+	Global.clue = label.text
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

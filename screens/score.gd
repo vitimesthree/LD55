@@ -4,8 +4,9 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	calculate_score()
+	$Clue.text = Global.clue
 	
+	calculate_score()
 	$Score.text = str(smarts)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -23,9 +24,9 @@ func calculate_score():
 	for r in range(0,6):
 		var current = collected[r]
 		if current[1] == prompt:
-			smarts += 100
+			smarts += 1000
 		else:
-			smarts += 50
+			smarts += 500
 	
 	if(smarts == 6000):
 		smarts = 999999
