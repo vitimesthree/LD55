@@ -74,7 +74,7 @@ func createPart(type = 0, part = 0):
 
 func _on_area_2d_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
 	var notif = notif_text.instantiate()
-	var hud = get_tree().root.get_child(1).get_child(2).get_child(0)
+	var hud = get_tree().root.get_child(1).get_child(1).get_child(0)
 	hud.add_child(notif)
 	
 	notif.position = init_pos
