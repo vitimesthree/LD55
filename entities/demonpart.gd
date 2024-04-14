@@ -90,7 +90,6 @@ func _on_area_2d_body_shape_entered(body_rid, body, body_shape_index, local_shap
 	
 	update_tracker(part_type)
 	add_to_parts(part_type, demon_type)
-	play_collect_sfx()
 	
 	if Global.parts_collected.size() == 6:
 		get_msg = "GET BACK TO\nTHE DOOR!"
@@ -99,6 +98,7 @@ func _on_area_2d_body_shape_entered(body_rid, body, body_shape_index, local_shap
 		get_msg = "ALREADY GOT\nTHIS PART!!"
 	else:
 		player.get_node("PickupTimer").start()
+		play_collect_sfx()
 	
 	notif.position = init_pos
 	notif.appear(get_msg)

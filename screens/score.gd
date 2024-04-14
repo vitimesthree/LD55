@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var smarts : int = 0
+@onready var next_scene : String = "res://screens/tutorial.tscn"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,7 +16,7 @@ func _process(_delta):
 
 func _input(event):
 	if event.is_action_pressed("jump"):
-		get_tree().change_scene_to_file('res://main.gd')
+		get_tree().change_scene_to_file(next_scene)
 
 func calculate_score():
 	var prompt = Global.required_demon
@@ -31,7 +32,10 @@ func calculate_score():
 	if(smarts == 6000):
 		smarts = 999999
 		$Perfect.visible = true
+		next_scene = "res://screens/good_ending.tscn"
 	elif(smarts >= 3500):
 		$Good.visible = true
+		next_scene = "res://screens/good_ending.tscn"
 	else:
 		$Fail.visible = true
+		next_scene = "res://screens/bad_ending.tscn"
