@@ -1,29 +1,34 @@
-[gd_scene load_steps=6 format=3 uid="uid://cquegfrh7vta0"]
+[gd_scene load_steps=7 format=3 uid="uid://cquegfrh7vta0"]
 
 [ext_resource type="PackedScene" uid="uid://sw3xs3fsxlo8" path="res://ui/hud.tscn" id="1_6jei3"]
 [ext_resource type="Script" path="res://main.gd" id="1_h6csy"]
 [ext_resource type="PackedScene" uid="uid://c0mc1wn1v04wc" path="res://world/world.tscn" id="2_f5gsf"]
 [ext_resource type="PackedScene" uid="uid://cfog5t5oqssai" path="res://entities/player.tscn" id="3_s4mts"]
+[ext_resource type="PackedScene" uid="uid://d0slidw1yh0p5" path="res://entities/door.tscn" id="5_i6hes"]
 [ext_resource type="AudioStream" uid="uid://yhclmsh0omhd" path="res://sound/ld55.mp3" id="5_j4buf"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_h6csy")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_j4buf")
+autoplay = true
 
 [node name="World" parent="." instance=ExtResource("2_f5gsf")]
+metadata/_edit_lock_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource("1_6jei3")]
 metadata/_edit_lock_ = true
 
+[node name="Door" parent="." instance=ExtResource("5_i6hes")]
+position = Vector2(720, 416)
+
 [node name="Player" parent="." instance=ExtResource("3_s4mts")]
 position = Vector2(720, 432)
 collision_mask = 1
 slide_on_ceiling = false
-broom_unlocked = true
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 limit_left = 0
@@ -39,49 +44,49 @@ limit_bottom = 784
 position = Vector2(440, 221)
 
 [node name="Marker2D2" type="Marker2D" parent="Spawns"]
-position = Vector2(25, 213)
+position = Vector2(64, 216)
 
 [node name="Marker2D3" type="Marker2D" parent="Spawns"]
-position = Vector2(1362, 30)
+position = Vector2(1336, 64)
 
 [node name="Marker2D4" type="Marker2D" parent="Spawns"]
-position = Vector2(1064, 60)
+position = Vector2(1064, 48)
 
 [node name="Marker2D5" type="Marker2D" parent="Spawns"]
-position = Vector2(940, 552)
+position = Vector2(944, 560)
 
 [node name="Marker2D6" type="Marker2D" parent="Spawns"]
-position = Vector2(805, 551)
+position = Vector2(800, 560)
 
 [node name="Marker2D7" type="Marker2D" parent="Spawns"]
-position = Vector2(1413, 486)
+position = Vector2(1368, 464)
 
 [node name="Marker2D8" type="Marker2D" parent="Spawns"]
-position = Vector2(1314, 222)
+position = Vector2(1328, 224)
 
 [node name="Marker2D9" type="Marker2D" parent="Spawns"]
-position = Vector2(648, 90)
+position = Vector2(920, 96)
 
 [node name="Marker2D10" type="Marker2D" parent="Spawns"]
-position = Vector2(924, 162)
+position = Vector2(800, 224)
 
 [node name="Marker2D11" type="Marker2D" parent="Spawns"]
-position = Vector2(522, 219)
+position = Vector2(512, 64)
 
 [node name="Marker2D12" type="Marker2D" parent="Spawns"]
 position = Vector2(935, 492)
 
 [node name="Marker2D13" type="Marker2D" parent="Spawns"]
-position = Vector2(1006, 370)
+position = Vector2(992, 384)
 
 [node name="Marker2D14" type="Marker2D" parent="Spawns"]
-position = Vector2(1383, 686)
+position = Vector2(1384, 696)
 
 [node name="Marker2D15" type="Marker2D" parent="Spawns"]
-position = Vector2(502, 695)
+position = Vector2(504, 686)
 
 [node name="Marker2D16" type="Marker2D" parent="Spawns"]
-position = Vector2(33, 543)
+position = Vector2(32, 544)
 
 [node name="Marker2D17" type="Marker2D" parent="Spawns"]
 position = Vector2(157, 314)
@@ -98,16 +103,16 @@ position = Vector2(448, 639)
 [node name="BroomSpawns" type="Node2D" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="BroomSpawns"]
-position = Vector2(366, 593)
+position = Vector2(396, 595)
 
 [node name="Marker2D2" type="Marker2D" parent="BroomSpawns"]
-position = Vector2(1001, 664)
+position = Vector2(1000, 648)
 
 [node name="Marker2D3" type="Marker2D" parent="BroomSpawns"]
-position = Vector2(1316, 657)
+position = Vector2(1314, 648)
 
 [node name="Marker2D4" type="Marker2D" parent="BroomSpawns"]
 position = Vector2(128, 584)
 
 [node name="Marker2D5" type="Marker2D" parent="BroomSpawns"]
-position = Vector2(488, 595)
+position = Vector2(496, 576)

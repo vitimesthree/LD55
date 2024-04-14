@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnxyhxhky58vn"]
+
+[ext_resource type="PackedScene" uid="uid://8jj0ck8l15va" path="res://screens/cutscene.tscn" id="1_kspiq"]
+
+[node name="Opening" type="Node2D"]
+
+[node name="Cutscene" parent="." instance=ExtResource("1_kspiq")]
+ending_frame = 3
+next_scene = "res://screens/tutorial.tscn"

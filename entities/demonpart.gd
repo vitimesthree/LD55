@@ -2,7 +2,7 @@ extends Node2D
 
 @export var part_type : String = "body"
 @export var demon_type : String = "devil"
-@export var get_msg : String = "BODY\nGET!"
+@export var get_msg : String = "GOT A\nTORSO!"
 
 @onready var init_pos : Vector2
 @onready var offset : float = -0.01
@@ -18,7 +18,7 @@ func _ready():
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if(floating == true):
 		position.y += offset
 		if(position.y <= (init_pos.y - 1)):
@@ -34,29 +34,29 @@ func createPart(type = 0, part = 0):
 	match part:
 		0:
 			part_type = "body"
-			get_msg = "BODY\nGET!"
+			get_msg = "GOT A\nTORSO!"
 			animator.play("bodies")
 		1:
 			part_type = "head"
-			get_msg = "HEAD\nGET!"
+			get_msg = "KEEP YOUR\nHEAD TOGETHER!"
 			animator.play("heads")
 		2:
 			part_type = "arm_l"
 			#Left and Right are swapped from the demon's perspective
 			#I'm keeping terminology respective to our though
-			get_msg = "RIGHT ARM\nGET!"
+			get_msg = "THAT'S\nRIGHT!"
 			animator.play("arms_l")
 		3:
 			part_type = "arm_r"
-			get_msg = "LEFT ARM\nGET!"
+			get_msg = "FOR THE\nLEFTIES!"
 			animator.play("arms_r")
 		4:
 			part_type = "leg_l"
-			get_msg = "RIGHT LEG\nGET!"
+			get_msg = "DON'T\nRUN!"
 			animator.play("legs_l")
 		5:
 			part_type = "leg_r"
-			get_msg = "LEFT LEG\nGET!"
+			get_msg = "BEST LEFT\nFOR ME!"
 			animator.play("legs_r")
 	match type:
 		0:
@@ -77,7 +77,9 @@ func createPart(type = 0, part = 0):
 func _on_area_2d_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
 	var notif = notif_text.instantiate()
 	var world = get_tree().root.get_child(1).get_child(1).get_child(0)
+	var player = get_tree().root.get_child(1).get_node("Player")
 	world.add_child(notif)
+	player.get_node("PickupTimer").start()
 	
 	update_tracker(part_type)
 	

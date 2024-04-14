@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cq68x5575xurf"]
+
+[ext_resource type="PackedScene" uid="uid://8jj0ck8l15va" path="res://screens/cutscene.tscn" id="1_3df6b"]
+
+[node name="Good Ending" type="Node2D"]
+
+[node name="Cutscene" parent="." instance=ExtResource("1_3df6b")]
+starting_frame = 7
+ending_frame = 8
+next_scene = "res://screens/score.tscn"

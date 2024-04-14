@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqnglej77vvt3"]
+
+[ext_resource type="Script" path="res://screens/dead.gd" id="1_70ycq"]
+[ext_resource type="Theme" uid="uid://do1ppa3788dbi" path="res://ui/hud_theme.tres" id="2_w74ab"]
+
+[node name="Dead" type="Node2D"]
+script = ExtResource("1_70ycq")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 480.0
+offset_bottom = 271.0
+color = Color(0.109804, 0.0784314, 0.121569, 1)
+
+[node name="Demon" type="Label" parent="."]
+offset_right = 480.0
+offset_bottom = 264.0
+theme = ExtResource("2_w74ab")
+text = "Oh no!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
