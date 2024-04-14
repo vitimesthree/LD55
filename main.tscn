@@ -393,12 +393,12 @@ position = Vector2(305, 311)
 position = Vector2(64, 115)
 
 [node name="Marker2D20" type="Marker2D" parent="Spawns"]
-position = Vector2(448, 639)
+position = Vector2(384, 576)
 
 [node name="BroomSpawns" type="Node2D" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="BroomSpawns"]
-position = Vector2(396, 595)
+position = Vector2(448, 639)
 
 [node name="Marker2D2" type="Marker2D" parent="BroomSpawns"]
 position = Vector2(800, 550)
