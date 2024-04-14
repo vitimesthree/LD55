@@ -20,5 +20,6 @@ func _on_body_shape_exited(body_rid, body, body_shape_index, local_shape_index):
 	print(player_touch)
 	
 func _input(event):
-	if Input.is_action_just_pressed("jump") && Global.parts_collected.size() == 6:
-		get_tree().change_scene_to_file("res://screens/score.tscn")
+	if Input.is_action_just_pressed("jump"):
+		if Global.parts_collected.size() == 6 && player_touch == true:
+			get_tree().change_scene_to_file("res://screens/score.tscn")
