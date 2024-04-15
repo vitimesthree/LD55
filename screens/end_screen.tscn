@@ -7,7 +7,7 @@
 
 [node name="Cutscene" parent="." instance=ExtResource("1_21x75")]
 music_stream = ExtResource("2_d588q")
-starting_frame = 9
+starting_frame = 8
 ending_frame = 9
 next_scene = "res://screens/opening.tscn"
 the_end = true

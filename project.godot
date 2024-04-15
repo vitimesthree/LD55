@@ -10,11 +10,12 @@ config_version=5
 
 [application]
 
-config/name="LD55"
+config/name="Daemonis Algebra"
 run/main_scene="res://screens/opening.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
-config/icon="res://icon.svg"
+boot_splash/show_image=false
+config/icon="res://icon.png"
 
 [autoload]
 
