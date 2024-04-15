@@ -6,6 +6,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Clue.text = Global.clue
+	$Clue.set("theme_override_colors/font_color",Color(Global.demon_hex))
 	
 	smarts = Global.score
 	$Score.text = str(smarts)
