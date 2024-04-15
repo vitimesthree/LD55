@@ -9,7 +9,6 @@ extends Node2D
 func _ready():
 	var marker_a = get_node("dest_a")
 	var marker_b = get_node("dest_b")
-	print(marker_a.global_position)
 	if marker_a:
 		dest_a = marker_a.global_position
 	if marker_b:
@@ -32,14 +31,16 @@ func _process(delta):
 	position = position.move_toward(destination, 40 * delta)
 
 func _on_area_2d_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
-	var knockback_x = player.dir * -1
+	var knockback_x = -1
+	if player.position.x > position.x:
+		knockback_x = 1
 	
 	var knockback_y = -1
 	if position.y < player.position.y:
 		knockback_y = 1
 
 	player.velocity.x = player.speed * 2 * knockback_x
-	player.velocity.y = player.jump_velocity * 8 * knockback_y
+	player.velocity.y = player.jump_velocity * 10 * knockback_y
 	player.hurt_sound.play()
 	
 	var hud = get_tree().root.get_child(1).get_node("CanvasLayer")

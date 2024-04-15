@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cquegfrh7vta0"]
+[gd_scene load_steps=13 format=3 uid="uid://cquegfrh7vta0"]
 
 [ext_resource type="PackedScene" uid="uid://sw3xs3fsxlo8" path="res://ui/hud.tscn" id="1_6jei3"]
 [ext_resource type="Script" path="res://main.gd" id="1_h6csy"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://be8f12kro6wqd" path="res://entities/ghost.tscn" id="7_qf3fc"]
 [ext_resource type="PackedScene" uid="uid://dsaypsgvciowf" path="res://entities/spiny.tscn" id="8_7j520"]
 [ext_resource type="PackedScene" uid="uid://bcdvctdj11rrb" path="res://world/lava.tscn" id="8_qi2ub"]
+[ext_resource type="PackedScene" uid="uid://dxfc4ld1hynx6" path="res://entities/jumba.tscn" id="9_ipxpx"]
 [ext_resource type="AudioStream" uid="uid://c3jqcv7yjw6n4" path="res://sound/collect/body_get_0.wav" id="10_u3fgt"]
 
 [node name="Main" type="Node2D"]
@@ -247,16 +248,6 @@ position = Vector2(328, 152)
 rotation = -3.14159
 player = NodePath("../../Player")
 
-[node name="Spikes25" parent="Hazards" node_paths=PackedStringArray("player") instance=ExtResource("7_bbsnk")]
-position = Vector2(136, 152)
-rotation = -3.14159
-player = NodePath("../../Player")
-
-[node name="Spikes40" parent="Hazards" node_paths=PackedStringArray("player") instance=ExtResource("7_bbsnk")]
-position = Vector2(152, 152)
-rotation = -3.14159
-player = NodePath("../../Player")
-
 [node name="Spikes26" parent="Hazards" node_paths=PackedStringArray("player") instance=ExtResource("7_bbsnk")]
 position = Vector2(697, 57)
 rotation = -3.14159
@@ -338,6 +329,114 @@ position = Vector2(-160, 0)
 
 [node name="dest_b" type="Marker2D" parent="Enemies/Spiny"]
 position = Vector2(64, 0)
+
+[node name="Spiny2" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("8_7j520")]
+position = Vector2(856, 240)
+player = NodePath("../../Player")
+
+[node name="dest_a" type="Marker2D" parent="Enemies/Spiny2"]
+position = Vector2(-64, 0)
+
+[node name="dest_b" type="Marker2D" parent="Enemies/Spiny2"]
+position = Vector2(48, 0)
+
+[node name="Spiny3" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("8_7j520")]
+position = Vector2(245, 656)
+player = NodePath("../../Player")
+
+[node name="dest_a" type="Marker2D" parent="Enemies/Spiny3"]
+position = Vector2(-77, 0)
+
+[node name="dest_b" type="Marker2D" parent="Enemies/Spiny3"]
+position = Vector2(67, 0)
+
+[node name="Spiny4" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("8_7j520")]
+position = Vector2(152, 240)
+player = NodePath("../../Player")
+
+[node name="dest_a" type="Marker2D" parent="Enemies/Spiny4"]
+position = Vector2(-32, 0)
+
+[node name="dest_b" type="Marker2D" parent="Enemies/Spiny4"]
+position = Vector2(33, 0)
+
+[node name="Jumba" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("9_ipxpx")]
+position = Vector2(697, 512)
+player = NodePath("../../Player")
+
+[node name="dest_a" type="Marker2D" parent="Enemies/Jumba"]
+position = Vector2(-49, 0)
+
+[node name="dest_b" type="Marker2D" parent="Enemies/Jumba"]
+position = Vector2(143, 0)
+
+[node name="Jumba2" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("9_ipxpx")]
+position = Vector2(200, 752)
+player = NodePath("../../Player")
+
+[node name="dest_a" type="Marker2D" parent="Enemies/Jumba2"]
+position = Vector2(-64, 0)
+
+[node name="dest_b" type="Marker2D" parent="Enemies/Jumba2"]
+position = Vector2(143, 0)
+
+[node name="Jumba3" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("9_ipxpx")]
+position = Vector2(1320, 512)
+player = NodePath("../../Player")
+
+[node name="dest_a" type="Marker2D" parent="Enemies/Jumba3"]
+position = Vector2(-33, 0)
+
+[node name="dest_b" type="Marker2D" parent="Enemies/Jumba3"]
+position = Vector2(15, 0)
+
+[node name="Jumba5" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("9_ipxpx")]
+position = Vector2(1161, 160)
+player = NodePath("../../Player")
+
+[node name="dest_a" type="Marker2D" parent="Enemies/Jumba5"]
+position = Vector2(-33, 0)
+
+[node name="dest_b" type="Marker2D" parent="Enemies/Jumba5"]
+position = Vector2(15, 0)
+
+[node name="Jumba7" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("9_ipxpx")]
+position = Vector2(808, 112)
+player = NodePath("../../Player")
+
+[node name="dest_a" type="Marker2D" parent="Enemies/Jumba7"]
+position = Vector2(-80, 0)
+
+[node name="dest_b" type="Marker2D" parent="Enemies/Jumba7"]
+
+[node name="Jumba8" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("9_ipxpx")]
+position = Vector2(585, 240)
+player = NodePath("../../Player")
+
+[node name="dest_a" type="Marker2D" parent="Enemies/Jumba8"]
+position = Vector2(-33, 0)
+
+[node name="dest_b" type="Marker2D" parent="Enemies/Jumba8"]
+position = Vector2(159, 0)
+
+[node name="Jumba6" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("9_ipxpx")]
+position = Vector2(1240, 64)
+player = NodePath("../../Player")
+
+[node name="dest_a" type="Marker2D" parent="Enemies/Jumba6"]
+position = Vector2(-33, 0)
+
+[node name="dest_b" type="Marker2D" parent="Enemies/Jumba6"]
+
+[node name="Jumba4" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("9_ipxpx")]
+position = Vector2(1305, 240)
+player = NodePath("../../Player")
+
+[node name="dest_a" type="Marker2D" parent="Enemies/Jumba4"]
+position = Vector2(-33, 0)
+
+[node name="dest_b" type="Marker2D" parent="Enemies/Jumba4"]
+position = Vector2(127, 0)
 
 [node name="Player" parent="." instance=ExtResource("3_s4mts")]
 position = Vector2(720, 432)

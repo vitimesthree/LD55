@@ -41,7 +41,7 @@ script = ExtResource("1_xgtmk")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, -8)
 sprite_frames = SubResource("SpriteFrames_p6plo")
-frame_progress = 0.912463
+frame_progress = 0.871027
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_mask = 2
