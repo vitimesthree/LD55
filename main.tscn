@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cquegfrh7vta0"]
+[gd_scene load_steps=11 format=3 uid="uid://cquegfrh7vta0"]
 
 [ext_resource type="PackedScene" uid="uid://sw3xs3fsxlo8" path="res://ui/hud.tscn" id="1_6jei3"]
 [ext_resource type="Script" path="res://main.gd" id="1_h6csy"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bs3j0rjghksw1" path="res://world/spikes.tscn" id="7_bbsnk"]
 [ext_resource type="PackedScene" uid="uid://be8f12kro6wqd" path="res://entities/ghost.tscn" id="7_qf3fc"]
 [ext_resource type="PackedScene" uid="uid://bcdvctdj11rrb" path="res://world/lava.tscn" id="8_qi2ub"]
+[ext_resource type="AudioStream" uid="uid://c3jqcv7yjw6n4" path="res://sound/collect/body_get_0.wav" id="10_u3fgt"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_h6csy")
@@ -422,5 +423,8 @@ position = Vector2(720, -32)
 collision_layer = 0
 collision_mask = 2
 player = NodePath("../Player")
+
+[node name="PartCollectSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_u3fgt")
 
 [connection signal="body_entered" from="Ghost" to="Player" method="_on_ghost_body_entered"]

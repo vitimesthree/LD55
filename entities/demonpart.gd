@@ -12,8 +12,6 @@ extends Node2D
 
 var notif_text = preload("res://ui/notif.tscn")
 
-@onready var sfx : Node = $CollectSound
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# debug
@@ -147,6 +145,8 @@ func add_to_parts(part, demon):
 	#print(Global.parts_collected)
 
 func play_collect_sfx():
+	var main = get_tree().root.get_child(1)
+	var sfx = main.get_node("PartCollectSound")
 	var collect_num = Global.parts_collected.size()
 	match collect_num:
 		1: sfx.stream = load("res://sound/collect/body_get_0.wav")
@@ -155,4 +155,5 @@ func play_collect_sfx():
 		4: sfx.stream = load("res://sound/collect/body_get_3.wav")
 		5: sfx.stream = load("res://sound/collect/body_get_4.wav")
 		6: sfx.stream = load("res://sound/collect/body_get_all_parts.wav")
+	
 	sfx.play()
