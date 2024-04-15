@@ -57,6 +57,7 @@ func _on_stompbox_body_shape_entered(body_rid, body, body_shape_index, local_sha
 			player.velocity.y = -player.jump_velocity * 5
 			$Timer.start()
 			$AnimatedSprite2D.play("ded")
+			$AudioStreamPlayer.play()
 		imdead = true
 
 func _on_timer_timeout():

@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dxfc4ld1hynx6"]
+[gd_scene load_steps=10 format=3 uid="uid://dxfc4ld1hynx6"]
 
 [ext_resource type="Script" path="res://entities/jumba.gd" id="1_n083q"]
 [ext_resource type="Texture2D" uid="uid://c8t36fj6mvfkx" path="res://sprites/jumba.png" id="1_tselq"]
+[ext_resource type="AudioStream" uid="uid://prhvvmuihwf8" path="res://sound/ld55_sfx_stomp.wav" id="3_isicd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6l10h"]
 atlas = ExtResource("1_tselq")
@@ -50,7 +51,7 @@ script = ExtResource("1_n083q")
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_rfhke")
 animation = &"walk"
-frame_progress = 0.28059
+frame_progress = 0.560582
 
 [node name="Hitbox" type="Area2D" parent="."]
 collision_mask = 2
@@ -68,6 +69,10 @@ shape = SubResource("RectangleShape2D_h3sxy")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 1.5
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_isicd")
+volume_db = 7.0
 
 [connection signal="body_shape_entered" from="Hitbox" to="." method="_on_hitbox_body_shape_entered"]
 [connection signal="body_shape_exited" from="Hitbox" to="." method="_on_hitbox_body_shape_exited"]
