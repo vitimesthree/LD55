@@ -5,6 +5,7 @@ extends Node2D
 @onready var music: Node = $Music
 var fade_speed: float = 5
 
+@export var music_stream : AudioStream = null
 @export var starting_frame: int = 0
 @export var ending_frame: int = 1
 @export var next_scene: String = ''
@@ -15,6 +16,9 @@ var fade: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	frame.frame = starting_frame
+	if music_stream != null:
+		music.stream = music_stream
+		music.play()
 	frame.modulate.a = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
