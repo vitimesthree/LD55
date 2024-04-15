@@ -3,6 +3,7 @@ extends Node
 var prompt : int = 0
 var clue : String = ''
 var required_demon: String = ''
+var score : int = 0
 
 # Parts stored as mini-arrays [0,1]
 # 0 is the part type (head, body, etc)

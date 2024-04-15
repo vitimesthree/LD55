@@ -9,4 +9,4 @@
 music_stream = ExtResource("2_lupn8")
 starting_frame = 7
 ending_frame = 8
-next_scene = "res://screens/end_screen.tscn"
+next_scene = "res://screens/score.tscn"

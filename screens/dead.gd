@@ -10,6 +10,9 @@ func _ready():
 func _process(_delta):
 	pass
 
+func _input(event):
+	if event.is_action_pressed("jump"):
+		get_tree().change_scene_to_file('res://screens/tutorial.tscn')
 
 func _on_timer_timeout():
-	get_tree().change_scene_to_file('res://screens/opening.tscn')
+	$Message.visible = true

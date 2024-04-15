@@ -52,9 +52,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ClueLabel" type="Label" parent="."]
-offset_left = 281.0
+offset_left = 192.0
 offset_top = 50.0
-offset_right = 394.0
+offset_right = 480.0
 offset_bottom = 85.0
 theme = SubResource("Theme_2yyhb")
 text = "The Clue Was:"
@@ -62,9 +62,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Clue" type="Label" parent="."]
-offset_left = 241.0
+offset_left = 192.0
 offset_top = 82.0
-offset_right = 433.0
+offset_right = 480.0
 offset_bottom = 128.0
 theme = ExtResource("2_ptmxk")
 text = "DEMON"
@@ -72,7 +72,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Fail" type="Label" parent="."]
-visible = false
 offset_left = 192.0
 offset_top = 127.0
 offset_right = 480.0
@@ -98,9 +97,10 @@ theme_override_font_sizes/font_size = 9
 text = "Good job!
 
 It's not perfect, but this
-guy ought to do just fine.
+guy's good enough.
+Trying again wouldn't hurt, though!
 
-(Press Z to continue)"
+(Press Z to play again)"
 horizontal_alignment = 1
 vertical_alignment = 1
 

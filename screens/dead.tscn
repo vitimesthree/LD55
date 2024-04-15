@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqnglej77vvt3"]
+[gd_scene load_steps=6 format=3 uid="uid://bqnglej77vvt3"]
 
 [ext_resource type="Script" path="res://screens/dead.gd" id="1_70ycq"]
 [ext_resource type="AudioStream" uid="uid://c0uknysfyt7rf" path="res://sound/woof.wav" id="2_fq46p"]
 [ext_resource type="Theme" uid="uid://do1ppa3788dbi" path="res://ui/hud_theme.tres" id="2_w74ab"]
+[ext_resource type="FontFile" uid="uid://d3wcvvaiqqqlp" path="res://fonts/pixeloid.ttf" id="4_qu6yl"]
+
+[sub_resource type="Theme" id="Theme_1mafd"]
+default_font = ExtResource("4_qu6yl")
+default_font_size = 9
 
 [node name="Dead" type="Node2D"]
 script = ExtResource("1_70ycq")
@@ -14,7 +19,7 @@ pitch_scale = 0.7
 autoplay = true
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 2.0
 autostart = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -27,6 +32,17 @@ offset_right = 480.0
 offset_bottom = 264.0
 theme = ExtResource("2_w74ab")
 text = "Oh no!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Message" type="Label" parent="."]
+visible = false
+offset_top = 124.0
+offset_right = 480.0
+offset_bottom = 264.0
+theme = SubResource("Theme_1mafd")
+text = "You ran out of time!
+(Press Z to retry)"
 horizontal_alignment = 1
 vertical_alignment = 1
 
