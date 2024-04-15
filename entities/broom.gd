@@ -23,6 +23,7 @@ func set_pos():
 func _on_area_2d_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
 	var player = get_tree().root.get_child(1).get_node('Player')
 	player.broom_unlocked = true
+	player.get_node("PickupTimer").start()
 	
 	var notif = notif_text.instantiate()
 	var hud = get_tree().root.get_child(1).get_child(1).get_child(0)

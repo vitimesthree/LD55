@@ -404,7 +404,7 @@ position = Vector2(384, 576)
 [node name="BroomSpawns" type="Node2D" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="BroomSpawns"]
-position = Vector2(448, 639)
+position = Vector2(445, 642)
 
 [node name="Marker2D2" type="Marker2D" parent="BroomSpawns"]
 position = Vector2(800, 550)
@@ -416,7 +416,16 @@ position = Vector2(1314, 648)
 position = Vector2(128, 584)
 
 [node name="Marker2D5" type="Marker2D" parent="BroomSpawns"]
-position = Vector2(497, 597)
+position = Vector2(509, 597)
+
+[node name="Marker2D6" type="Marker2D" parent="BroomSpawns"]
+position = Vector2(871, 402)
+
+[node name="Marker2D7" type="Marker2D" parent="BroomSpawns"]
+position = Vector2(46, 488)
+
+[node name="Marker2D8" type="Marker2D" parent="BroomSpawns"]
+position = Vector2(441, 358)
 
 [node name="Ghost" parent="." node_paths=PackedStringArray("player") instance=ExtResource("7_qf3fc")]
 position = Vector2(720, -32)

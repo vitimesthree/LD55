@@ -65,7 +65,7 @@ func spawn_parts():
 
 func spawn_broom():
 	var broom_spawns = $BroomSpawns.get_children()
-	var rand_spawn = randi_range(0,4)
+	var rand_spawn = randi_range(0,broom_spawns.size()-1)
 	
 	var broom_pickup = broom.instantiate()
 	parts_holder.add_child(broom_pickup)
