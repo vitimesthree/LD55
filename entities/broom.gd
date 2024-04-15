@@ -4,7 +4,6 @@ var init_pos : Vector2
 var offset : float = -0.01
 var get_msg : String = "MY BROOM!\n(Press X / (A) / (B))"
 var notif_text = preload("res://ui/notif.tscn")
-@onready var sfx : Node = $CollectSound
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -32,6 +31,9 @@ func _on_area_2d_body_shape_entered(body_rid, body, body_shape_index, local_shap
 	notif.position = init_pos
 	notif.appear(get_msg)
 	
+	var main = get_tree().root.get_child(1)
+	var sfx = main.get_node("PartCollectSound")
+	sfx.stream = load("res://sound/collect/body_get_all_parts.wav")
 	sfx.play()
 	
 	self.queue_free()
