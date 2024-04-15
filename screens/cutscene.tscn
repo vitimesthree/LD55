@@ -83,6 +83,7 @@ script = ExtResource("1_hrqbu")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_lcmo7")
+volume_db = -2.0
 autoplay = true
 
 [node name="Timer" type="Timer" parent="."]
