@@ -50,7 +50,7 @@ func calculate_score():
 		smarts = 999999
 	Global.score = smarts
 	
-	if(smarts >= 3500):
+	if(smarts >= 3000):
 		next_scene = "res://screens/good_ending.tscn"
 	else:
 		next_scene = "res://screens/bad_ending.tscn"

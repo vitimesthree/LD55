@@ -407,10 +407,10 @@ position = Vector2(384, 576)
 position = Vector2(445, 642)
 
 [node name="Marker2D2" type="Marker2D" parent="BroomSpawns"]
-position = Vector2(800, 550)
+position = Vector2(803, 552)
 
 [node name="Marker2D3" type="Marker2D" parent="BroomSpawns"]
-position = Vector2(1314, 648)
+position = Vector2(1296, 645)
 
 [node name="Marker2D4" type="Marker2D" parent="BroomSpawns"]
 position = Vector2(128, 584)
