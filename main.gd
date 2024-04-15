@@ -15,7 +15,7 @@ func _ready():
 	spawns = $Spawns.get_children()
 	for r in range(0,spawns.size()):
 		spawn_taken.append(false)
-	
+
 	spawn_parts()
 	spawn_broom()
 	
