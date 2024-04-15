@@ -10,6 +10,7 @@ extends CharacterBody2D
 @export var decceleration: float = 20
 @export var jump_velocity: float = 35
 @export var terminal_velocity: float = 30
+@onready var dir : int = 1
 
 @export var broom_unlocked: bool = false
 @export var broom_enabled: bool = false
@@ -59,8 +60,10 @@ func _physics_process(delta):
 					sprite.play("move")
 					if (velocity.x > 0):
 						sprite.flip_h = false
+						dir = 1
 					elif (velocity.x < 0):
 						sprite.flip_h = true
+						dir = -1
 				else:
 					sprite.play("idle")
 			else:

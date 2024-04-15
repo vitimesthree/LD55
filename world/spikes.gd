@@ -11,7 +11,14 @@ func _process(delta):
 	pass
 
 func _on_area_2d_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
-	player.velocity.x = -player.speed * 5
+	var knockback_x = player.dir * -1
+	
+	var knockback_y = -1
+	if position.y < player.position.y:
+		knockback_y = 1
+
+	player.velocity.x = player.speed * 2 * knockback_x
+	player.velocity.y = player.jump_velocity * 8 * knockback_y
 	player.hurt_sound.play()
 	
 func _on_area_2d_body_shape_exited(body_rid, body, body_shape_index, local_shape_index):
