@@ -14,7 +14,7 @@ extends CharacterBody2D
 
 @export var broom_unlocked: bool = false
 @export var broom_enabled: bool = false
-@export var broom_speed: float = speed * 1.4
+@export var broom_speed: float = speed * 0.7
 @export var broom_acceleration: float = acceleration / 2
 @export var broom_decceleration: float = decceleration / 2
 

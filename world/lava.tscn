@@ -48,7 +48,7 @@ script = ExtResource("1_rpaf3")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_n8mfr")
-frame_progress = 0.239181
+frame_progress = 0.381438
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_mask = 2

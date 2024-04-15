@@ -246,7 +246,12 @@ rotation = -3.14159
 player = NodePath("../../Player")
 
 [node name="Spikes25" parent="Hazards" node_paths=PackedStringArray("player") instance=ExtResource("7_bbsnk")]
-position = Vector2(184, 168)
+position = Vector2(136, 152)
+rotation = -3.14159
+player = NodePath("../../Player")
+
+[node name="Spikes40" parent="Hazards" node_paths=PackedStringArray("player") instance=ExtResource("7_bbsnk")]
+position = Vector2(152, 152)
 rotation = -3.14159
 player = NodePath("../../Player")
 

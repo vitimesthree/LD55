@@ -1,7 +1,7 @@
 extends Area2D
 
 @export var player: Node2D = null
-var speed: float = 25
+var speed: float = 0.7
 
 @onready var sprite: Node2D = $AnimatedSprite2D
 @onready var afterimage_timer : Timer = $AfterimageTimer
@@ -20,7 +20,7 @@ func _process(delta):
 	else:
 		sprite.flip_h = false
 	
-	position = position.move_toward(player.position, speed * delta)
+	position = position.lerp(player.position, speed * delta)
 	if !Global.ghost:
 		queue_free()
 

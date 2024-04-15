@@ -65,13 +65,13 @@ afterimage_node = ExtResource("2_ekq3w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_wntob")
-frame_progress = 0.19171
+frame_progress = 0.473259
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_b2f80")
 
 [node name="AfterimageTimer" type="Timer" parent="."]
-wait_time = 0.75
+wait_time = 0.2
 autostart = true
 
 [connection signal="timeout" from="AfterimageTimer" to="." method="_on_afterimage_timer_timeout"]

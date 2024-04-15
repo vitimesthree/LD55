@@ -18,3 +18,11 @@ func _process(_delta):
 
 func _on_timeout():
 	get_tree().change_scene_to_file('res://screens/dead.tscn')
+	
+func get_hurt():
+	var holder = wait_time
+	holder = time_left - 2.5
+	if holder < 0:
+		holder = 0.5
+	wait_time = holder
+	start()
