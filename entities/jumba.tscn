@@ -51,7 +51,7 @@ script = ExtResource("1_n083q")
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_rfhke")
 animation = &"walk"
-frame_progress = 0.560582
+frame_progress = 0.059963
 
 [node name="Hitbox" type="Area2D" parent="."]
 collision_mask = 2
