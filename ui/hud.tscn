@@ -19,7 +19,7 @@ grow_vertical = 2
 
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0
-wait_time = 90.0
+wait_time = 91.0
 autostart = true
 script = ExtResource("2_wn2mj")
 
