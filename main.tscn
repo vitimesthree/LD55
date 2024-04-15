@@ -16,7 +16,7 @@ script = ExtResource("1_h6csy")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_s6ne5")
-volume_db = -6.0
+volume_db = -8.0
 autoplay = true
 
 [node name="World" parent="." instance=ExtResource("2_f5gsf")]
@@ -435,5 +435,6 @@ player = NodePath("../Player")
 
 [node name="PartCollectSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_u3fgt")
+volume_db = -4.0
 
 [connection signal="body_entered" from="Ghost" to="Player" method="_on_ghost_body_entered"]
