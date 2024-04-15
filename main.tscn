@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cquegfrh7vta0"]
+[gd_scene load_steps=12 format=3 uid="uid://cquegfrh7vta0"]
 
 [ext_resource type="PackedScene" uid="uid://sw3xs3fsxlo8" path="res://ui/hud.tscn" id="1_6jei3"]
 [ext_resource type="Script" path="res://main.gd" id="1_h6csy"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d0slidw1yh0p5" path="res://entities/door.tscn" id="5_i6hes"]
 [ext_resource type="PackedScene" uid="uid://bs3j0rjghksw1" path="res://world/spikes.tscn" id="7_bbsnk"]
 [ext_resource type="PackedScene" uid="uid://be8f12kro6wqd" path="res://entities/ghost.tscn" id="7_qf3fc"]
+[ext_resource type="PackedScene" uid="uid://dsaypsgvciowf" path="res://entities/spiny.tscn" id="8_7j520"]
 [ext_resource type="PackedScene" uid="uid://bcdvctdj11rrb" path="res://world/lava.tscn" id="8_qi2ub"]
 [ext_resource type="AudioStream" uid="uid://c3jqcv7yjw6n4" path="res://sound/collect/body_get_0.wav" id="10_u3fgt"]
 
@@ -16,7 +17,7 @@ script = ExtResource("1_h6csy")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_s6ne5")
-volume_db = -3.0
+volume_db = -8.0
 autoplay = true
 
 [node name="World" parent="." instance=ExtResource("2_f5gsf")]
@@ -325,6 +326,18 @@ player = NodePath("../../Player")
 position = Vector2(280, 377)
 rotation = -3.14159
 player = NodePath("../../Player")
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Spiny" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("8_7j520")]
+position = Vector2(1192, 720)
+player = NodePath("../../Player")
+
+[node name="dest_a" type="Marker2D" parent="Enemies/Spiny"]
+position = Vector2(-160, 0)
+
+[node name="dest_b" type="Marker2D" parent="Enemies/Spiny"]
+position = Vector2(64, 0)
 
 [node name="Player" parent="." instance=ExtResource("3_s4mts")]
 position = Vector2(720, 432)

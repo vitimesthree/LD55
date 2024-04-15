@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://dsaypsgvciowf"]
+
+[ext_resource type="Texture2D" uid="uid://cpyt8n3abeodn" path="res://sprites/spiny.png" id="1_sviqa"]
+[ext_resource type="Script" path="res://entities/spiny.gd" id="1_xgtmk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7gox0"]
+atlas = ExtResource("1_sviqa")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_226cw"]
+atlas = ExtResource("1_sviqa")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2g7nv"]
+atlas = ExtResource("1_sviqa")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p6plo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7gox0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_226cw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2g7nv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bms5v"]
+size = Vector2(15, 19)
+
+[node name="Spiny" type="Node2D"]
+script = ExtResource("1_xgtmk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -8)
+sprite_frames = SubResource("SpriteFrames_p6plo")
+frame_progress = 0.912463
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, -9.5)
+shape = SubResource("RectangleShape2D_bms5v")
+
+[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]
+[connection signal="body_shape_exited" from="Area2D" to="." method="_on_area_2d_body_shape_exited"]

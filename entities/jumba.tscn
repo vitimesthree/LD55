@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=3 uid="uid://dxfc4ld1hynx6"]
+
+[ext_resource type="Texture2D" uid="uid://c8t36fj6mvfkx" path="res://sprites/jumba.png" id="1_tselq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6l10h"]
+atlas = ExtResource("1_tselq")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stspv"]
+atlas = ExtResource("1_tselq")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5amv"]
+atlas = ExtResource("1_tselq")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rfhke"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6l10h")
+}],
+"loop": false,
+"name": &"ded",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_stspv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u5amv")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4t2u"]
+size = Vector2(20, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_76vkq"]
+size = Vector2(13, 11)
+
+[node name="Jumba" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_rfhke")
+animation = &"walk"
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="Hitbox" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_g4t2u")
+
+[node name="Stompbox" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, -9.5)
+shape = SubResource("RectangleShape2D_76vkq")
