@@ -4,6 +4,8 @@ extends Area2D
 var speed: float = 25
 
 @onready var sprite: Node2D = $AnimatedSprite2D
+@onready var afterimage_timer : Timer = $AfterimageTimer
+@export var afterimage_node : PackedScene
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,3 +23,15 @@ func _process(delta):
 	position = position.move_toward(player.position, speed * delta)
 	if !Global.ghost:
 		queue_free()
+
+func add_afterimage():
+	var afterimage = afterimage_node.instantiate()
+	afterimage.set_property(position, sprite.scale)
+	get_tree().current_scene.add_child(afterimage)
+	afterimage.frame = sprite.frame
+	
+	if sprite.flip_h == true:
+		afterimage.flip_h = true
+
+func _on_afterimage_timer_timeout():
+	add_afterimage()

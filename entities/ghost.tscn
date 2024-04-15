@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://be8f12kro6wqd"]
+[gd_scene load_steps=12 format=3 uid="uid://be8f12kro6wqd"]
 
 [ext_resource type="Script" path="res://entities/ghost.gd" id="1_bbrqx"]
 [ext_resource type="Texture2D" uid="uid://ci60vpaotq4wm" path="res://sprites/ghost.png" id="1_lxmt4"]
+[ext_resource type="PackedScene" uid="uid://blteymdlxmey" path="res://entities/afterimage.tscn" id="2_ekq3w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gw0b3"]
 atlas = ExtResource("1_lxmt4")
@@ -56,10 +57,21 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b2f80"]
 
 [node name="Ghost" type="Area2D"]
+z_index = 500
+z_as_relative = false
+collision_mask = 3
 script = ExtResource("1_bbrqx")
+afterimage_node = ExtResource("2_ekq3w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_wntob")
+frame_progress = 0.19171
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_b2f80")
+
+[node name="AfterimageTimer" type="Timer" parent="."]
+wait_time = 0.75
+autostart = true
+
+[connection signal="timeout" from="AfterimageTimer" to="." method="_on_afterimage_timer_timeout"]
