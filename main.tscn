@@ -16,7 +16,7 @@ script = ExtResource("1_h6csy")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_s6ne5")
-volume_db = -6.0
+volume_db = -8.0
 autoplay = true
 
 [node name="World" parent="." instance=ExtResource("2_f5gsf")]
@@ -404,7 +404,7 @@ position = Vector2(384, 576)
 [node name="BroomSpawns" type="Node2D" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="BroomSpawns"]
-position = Vector2(448, 639)
+position = Vector2(445, 642)
 
 [node name="Marker2D2" type="Marker2D" parent="BroomSpawns"]
 position = Vector2(800, 550)
@@ -416,7 +416,16 @@ position = Vector2(1314, 648)
 position = Vector2(128, 584)
 
 [node name="Marker2D5" type="Marker2D" parent="BroomSpawns"]
-position = Vector2(497, 597)
+position = Vector2(509, 597)
+
+[node name="Marker2D6" type="Marker2D" parent="BroomSpawns"]
+position = Vector2(871, 402)
+
+[node name="Marker2D7" type="Marker2D" parent="BroomSpawns"]
+position = Vector2(46, 488)
+
+[node name="Marker2D8" type="Marker2D" parent="BroomSpawns"]
+position = Vector2(441, 358)
 
 [node name="Ghost" parent="." node_paths=PackedStringArray("player") instance=ExtResource("7_qf3fc")]
 position = Vector2(720, -32)
@@ -426,5 +435,6 @@ player = NodePath("../Player")
 
 [node name="PartCollectSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_u3fgt")
+volume_db = -4.0
 
 [connection signal="body_entered" from="Ghost" to="Player" method="_on_ghost_body_entered"]
